@@ -1,15 +1,9 @@
-import _ from 'lodash';
-import './style.css';
+import './style.css'
+// const tasks = [{description:'',
+//                 completed: false,
+//                 index: 1}]
 
- function component() {
-   const element = document.createElement('div');
+// const populateTasks = () => '' + tasks.forEach(task => {
+//     return `<li class id="${task.index}">${task.description}</li>`
+// })
 
-  // Lodash, currently included via a script, is required for this line to work
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
-
-   return element;
- }
-
- document.body.appendChild(component());
