@@ -4,50 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wbpack Exercise</title>
+    <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
     <main class="container">
-        <ul id="todo-list">
-            <li class="list-header"><h2>Today's To Do</h2><img src="https://img.icons8.com/ios/50/000000/update-left-rotation.png"/></li>
-            <li class="add-list">
-                <form action="">
-                    <input 
-                        class="add-list-input" 
-                        type="text" 
-                        placeholder="Add to your list..."
-                        aria-label="Add to your list..."
-                        >
-                </form>
-            </li>
-
-            <li class="list-item">
-                <input 
-                    type="checkbox" 
-                    name="status" 
-                    id="1">
-                <label for="1">wash the dishes</label> 
-            </li>
-
-            <li class="list-item">
-                <input 
-                    type="checkbox" 
-                    name="status" 
-                    id="2">
-                <label for="2">complete to do list project</label> 
-            </li>
-
-            <li class="list-item">
-                <input 
-                    type="checkbox" 
-                    name="status" 
-                    id="3">
-                <label for="3">wash the dishes </label>
-                <span>&#8942;</span>
-                
-            </li>
+        <header class="list-header"><h1>Today's To Do</h1><img class="refresh-icon" src="https://img.icons8.com/ios/50/000000/update-left-rotation.png"/></header>
             
-            <li class="clear-list">Clear all completed</li>
-        </ul>
+        <form class='form add-list' id="add-form" action="#">
+            <input 
+                class="task-input" 
+                name="input"
+                type="text" 
+                placeholder="Add to your list..."
+                required
+                >
+                <!-- <input type="submit" hidden> -->
+                <p class="enter-key">&#8629;</p>
+        </form>
+    
+    <ul id="todo-list" class="todo-list">
+    
+    </ul>
+    <!-- 
+        <li class="list-item">
+            <div><input 
+                class="task-status"
+                type="checkbox" 
+                name="status" 
+                id="1">
+            <label class="task-desc" for="1">finish to-do list: Structure</label></div>
+            <p class="more-icon">&#8942;</p>
+        </li>
+    -->
+        <div class="btn">
+        <button id="clear-button" class="clear-button">Clear all completed</button>
+        </div>
     </main>
+
+    <template id="task-template">
+        <li class="list-item">
+            <div><input 
+                class="task-status"
+                type="checkbox" 
+                name="status" 
+                >
+            <label class="task-desc" ></label></div>
+            <p class="more-icon">&#8942;</p>
+        </li>
+    </template>
 </body>
 </html>
