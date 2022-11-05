@@ -3,8 +3,8 @@ import './style.css';
 const todoList = document.querySelector('.todo-list');
 const form = document.querySelector('.form');
 const taskInput = document.querySelector('.task-input');
-
-const tasks = JSON.parse(localStorage.getItem('task.lists')) || [];
+const SAVE_LOC = 'task.lists';
+const tasks = JSON.parse(localStorage.getItem(SAVE_LOC)) || [];
 
 class NewTask {
   constructor(description, index) {
@@ -14,11 +14,27 @@ class NewTask {
   }
 }
 
+const save = () => {
+  localStorage.setItem(SAVE_LOC, JSON.stringify(tasks));
+};
+
 const clearList = (list) => {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
 };
+
+// Remove Task
+
+const removeTodo = (button, listItem) => {
+    button.parentElement.remove();
+    const ind = tasks.indexOf(listItem);
+    tasks.splice(ind, 1);
+    for (let i = ind; i < tasks.length; i += 1) {
+      tasks[i].index -= 1;
+    }
+    localStorage.setItem('task.lists', JSON.stringify(tasks));
+  };
 
 const render = () => {
   clearList(todoList);
@@ -33,6 +49,13 @@ const render = () => {
     checkbox.type = 'checkbox';
     checkbox.setAttribute('id', `${task.index}`);
     checkbox.classList.add('task-status');
+    checkbox.checked = task.completed;
+    checkbox.addEventListener('change', (e) => {
+      const ind = tasks.indexOf(task);
+      tasks[ind].completed = e.target.checked;
+      save();
+    });
+
     div.appendChild(checkbox);
 
     const label = document.createElement('label');
@@ -44,20 +67,31 @@ const render = () => {
     const button = document.createElement('button');
     button.innerHTML = '&#8942;';
     button.classList.add('more-icon');
+    button.addEventListener('click', () => {
+        button.classList.add('disappear');
+      removeTodo(button, task);
+    });
+
+    // const button = document.createElement('button');
+    // button.innerHTML = '&#128465;';
+    // button.classList.add('more-icon');
+    // button.classList.add('more-icon');
+    // button.setAttribute('id', `${task.index}`);
+    // button.addEventListener('click', () => {
+    //   removeTodo(button, task);
+    // });
 
     listItem.appendChild(div);
     listItem.appendChild(button);
   });
 };
 
-const save = () => {
-  localStorage.setItem('task.lists', JSON.stringify(tasks));
-};
-
 const saveRender = () => {
   save();
   render();
 };
+
+// Add Task
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -67,6 +101,7 @@ form.addEventListener('submit', (e) => {
   const createTask = new NewTask(taskDesc, index);
   tasks.push(createTask);
   taskInput.value = null;
+  
   saveRender();
 });
 
