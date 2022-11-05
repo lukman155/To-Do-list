@@ -68,21 +68,24 @@ const render = () => {
     button.innerHTML = '&#8942;';
     button.classList.add('more-icon');
     button.addEventListener('click', () => {
-        button.classList.add('disappear');
-      removeTodo(button, task);
+      button.classList.add('disappear');
+      listItem.classList.add('yellow-tag')
+      delBtn.classList.remove('disappear');
+
     });
 
-    // const button = document.createElement('button');
-    // button.innerHTML = '&#128465;';
-    // button.classList.add('more-icon');
-    // button.classList.add('more-icon');
-    // button.setAttribute('id', `${task.index}`);
-    // button.addEventListener('click', () => {
-    //   removeTodo(button, task);
-    // });
+    const delBtn = document.createElement('button');
+    delBtn.innerHTML = '&#128465;';
+    delBtn.classList.add('more-icon');
+    delBtn.classList.add('disappear');
+    delBtn.addEventListener('click', () => {
+      delBtn.classList.remove('disappear');
+      removeTodo(delBtn, task);
+    });
 
     listItem.appendChild(div);
     listItem.appendChild(button);
+    listItem.appendChild(delBtn);
   });
 };
 
