@@ -1,12 +1,17 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome Books
+# To Do List App
 
 ![](./hello.png)
 
 ## Project Details
 
 > This is a project created using HTML, CSS and JavaScript to show my knowledge of them.
+
+### Live Demo
+
+[Live Demo Link](https://lukman155.github.io/To-Do-list/dist/)
+
 
 ## Built With
 
@@ -35,15 +40,6 @@ build the first required sections of the website using the template you chose in
 - A terminal
 - A web browser to view output
 - An IDE e.g Visual studio code
-
-### Video link
-
-
-### Live Demo
-
-[Live Demo Link](################)
-
-
 ### Setup
 
 - Clone this repository or download the Zip folder:
@@ -51,11 +47,11 @@ build the first required sections of the website using the template you chose in
 
 for https:
 ```
-    git clone https://github.com/lukman155/htmlcsscapstone.git
+    git clone https://github.com/lukman155/To-Do-list.git
 ```
 for ssh:
 ```
-    git clone git@github.com:lukman155/htmlcsscapstone.git
+    git clone git@github.com:lukman155/To-Do-list.git
 
 ```
 
