@@ -2,7 +2,7 @@ import removeTodo, { clearList } from './removetask.js';
 import { tasks, save } from './storage.js';
 import { todoList } from './elements.js';
 
-const render = () => {
+const render = (tasks) => {
   clearList(todoList);
   tasks.forEach((task) => {
     const listItem = document.createElement('li');
@@ -86,7 +86,7 @@ const render = () => {
 
 const saveRender = () => {
   save();
-  render();
+  render(tasks);
 };
 
 export default render;
