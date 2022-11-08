@@ -19,19 +19,6 @@ form.addEventListener('submit', (e) => {
   saveRender();
 });
 
-// const removeCompleted = () => {
-//   clearList(todoList);
-//   for (let x = 0; x < tasks.length; x += 1) {
-//     if (tasks[x].completed) {
-//       tasks.splice(x, 1);
-//       for (let i = x; i < tasks.length; i += 1) {
-//         tasks[i].index -= 1;
-//       }
-//     }
-//   }
-//   saveRender();
-// };
-
 clearButton.addEventListener('click', () => {
   const newlist = tasks.filter((element) => element.completed === true);
   newlist.forEach((element) => {
