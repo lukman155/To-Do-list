@@ -1,6 +1,9 @@
-import removeTodo, { clearList } from './removetask.js';
 import { tasks, save } from './storage.js';
 // import { todoList } from './elements.js';
+
+const removeTodo = (button) => {
+  button.parentElement.remove();
+};
 
 const render = (tasks) => {
   tasks.forEach((task) => {
@@ -90,5 +93,6 @@ const saveRender = () => {
   render(tasks);
 };
 
+export { removeTodo };
 export default render;
 export { saveRender };
