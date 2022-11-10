@@ -1,13 +1,11 @@
 import removeTodo, { clearList } from './removetask.js';
 import { tasks, save } from './storage.js';
-import { todoList } from './elements.js';
+// import { todoList } from './elements.js';
 
 const render = (tasks) => {
-  // clearList(todoList);
   tasks.forEach((task) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-item');
-    todoList.appendChild(listItem);
 
     const div = document.createElement('div');
 
@@ -81,6 +79,9 @@ const render = (tasks) => {
     listItem.appendChild(editInput);
     listItem.appendChild(button);
     listItem.appendChild(delBtn);
+
+    const todoList = document.querySelector('.todo-List');
+    todoList.appendChild(listItem);
   });
 };
 

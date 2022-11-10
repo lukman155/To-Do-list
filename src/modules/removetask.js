@@ -7,7 +7,7 @@ const removeTodo = (button, listItem) => {
   for (let i = ind; i < tasks.length; i += 1) {
     tasks[i].index -= 1;
   }
-  save();
+  // save();
 };
 
 const clearList = (list) => {
