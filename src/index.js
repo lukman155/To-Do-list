@@ -3,7 +3,7 @@ import NewTask from './modules/task.js';
 import { save, tasks } from './modules/storage.js';
 import {
   todoList, form, taskInput, clearButton,
-} from './modules/interactive.js';
+} from './modules/elements.js';
 import render, { saveRender } from './modules/render.js';
 // Add Task
 
