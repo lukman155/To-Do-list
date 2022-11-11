@@ -1,5 +1,5 @@
 /** @jest-environment jsdom */
-import { editInput, clearButton } from './interactive.js';
+import { editInput } from './interactive.js';
 import '@testing-library/jest-dom';
 
 describe('render', () => {
