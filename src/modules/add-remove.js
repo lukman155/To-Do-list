@@ -1,5 +1,4 @@
 import { tasks, save } from './storage.js';
-// import { todoList } from './elements.js';
 
 const removeTodo = (button) => {
   button.parentElement.remove();
@@ -20,7 +19,6 @@ const render = (tasks) => {
     checkbox.addEventListener('change', (e) => {
       const ind = tasks.indexOf(task);
       tasks[ind].completed = e.target.checked;
-      // save();
     });
 
     div.appendChild(checkbox);
@@ -64,7 +62,6 @@ const render = (tasks) => {
 
       editInput.addEventListener('keyup', (event) => {
         if (event.key === 'Enter') {
-          // save();
           window.location.reload();
         }
       });
@@ -72,7 +69,6 @@ const render = (tasks) => {
       document.addEventListener('click', (e) => {
         const desc = Array.from(listItem.querySelectorAll('*'));
         if (!desc.includes(e.target)) {
-          // save();
           window.location.reload();
         }
       });
