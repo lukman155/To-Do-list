@@ -1,5 +1,5 @@
 /** @jest-environment jsdom */
-import { editInput } from './interactive.js';
+import { editInput, clearButton } from './interactive.js';
 import '@testing-library/jest-dom';
 
 describe('render', () => {
@@ -37,10 +37,7 @@ describe('render', () => {
 
   test('Check addTodo able add todo to todoList', () => {
     const todoList = document.querySelector('.todo-List');
-    const button = document.querySelectorAll('input');
-    button.forEach((element) => {
-      if (element.checked) element.parentElement.remove();
-    });
+    clearButton(tasks);
     expect(todoList.children.length).toBe(1);
   });
 });
