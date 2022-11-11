@@ -14,3 +14,15 @@ const clearButton = (tasks) => {
 };
 
 export { clearButton, editInput };
+
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const taskDesc = taskInput.value;
+//   const index = tasks.length;
+//   if (taskDesc == null || taskDesc === '') return;
+//   const createTask = new NewTask(taskDesc, index);
+//   tasks.push(createTask);
+//   taskInput.value = null;
+
+//   saveRender();
+// });
