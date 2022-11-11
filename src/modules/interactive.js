@@ -11,6 +11,9 @@ const clearButton = (tasks) => {
       tasks.splice(tasks.indexOf(element), 1);
     }
   });
+  const button = document.querySelectorAll('input');
+  button.forEach((element) => {
+    if (element.checked) element.parentElement.remove();
+  });
 };
-
 export { clearButton, editInput };
